@@ -1,0 +1,34 @@
+{
+  "name": "dockerized-node",
+  "version": "1.0.0",
+  "description": "Sample dockerized node app.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon app.js --exec babel-node",
+    "build": "rm -rf build && mkdir build && babel -d ./build --ignore node_modules . -s",
+    "start": "NODE_ENV=prod node ./build/app.js",
+    "test": "NODE_ENV=test mocha --timeout 10000 --compilers js:@babel/register",
+    "lint": "eslint ."
+  },
+  "author": "Samuel Corso",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.11"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  }
+}
