@@ -1,6 +1,2 @@
 node_modules/
 .env
-docker-compose.yml
-production.yml
-Dockerfile
-Dockerfile.dev
